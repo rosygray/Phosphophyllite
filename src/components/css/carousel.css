@@ -1,0 +1,172 @@
+  .carousel {
+    display: flex;
+    position: relative;
+    width: 100%;
+    background: #ccc;
+    overflow: hidden;
+  }
+
+  .banner {
+    position: absolute;
+    left: 0%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-i {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 0;
+    /* margin-right: 15%;
+      margin-left: 15%; */
+    list-style: none;
+    transition: all .5s ease-in-out;
+  }
+
+  .carousel-i li {
+    position: relative;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    /* text-indent: -999px; */
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all .5s ease-in-out;
+  }
+
+  /* .carousel-i li::before {
+      position: absolute;
+      top: -10px;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: 10px;
+      content: "";
+    }
+    
+    .carousel-i li::after {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: 10px;
+      content: "";
+    } */
+  .carousel-i .active {
+    background-color: #fff;
+    transition: all .5s ease-in-out;
+    transform: scale(1, 1.6);
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -2rem;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    transition: all .5s ease-in-out;
+    opacity: .5;
+    background: #000;
+    transition: all .5s ease-in-out;
+  }
+
+  .carousel-control-prev {
+    left: 0;
+    border-radius: 0 50% 50% 0;
+  }
+
+  .carousel-control-next {
+    right: 0;
+    border-radius: 50% 0 0 50%;
+  }
+
+
+  .carousel-control-prev:hover,
+  .carousel-control-prev:focus,
+  .carousel-control-next:hover,
+  .carousel-control-next:focus {
+    color: #fff;
+    outline: 0;
+    opacity: 1;
+    transition: all .5s ease-in-out;
+  }
+
+  .next-icon {
+    animation: next-icon .5s ease-in-out alternate;
+
+  }
+
+  .prev-icon {
+    animation: prev-icon .5s ease-in-out alternate;
+  }
+
+  @keyframes next-icon {
+    0% {
+      transform: translateX(0rem);
+    }
+
+    50% {
+      transform: translateX(1rem);
+    }
+
+    100% {
+      transform: translateX(0rem);
+    }
+  }
+
+  @keyframes prev-icon {
+    0% {
+      transform: translateX(0rem)
+    }
+
+    50% {
+      transform: translateX(-1rem)
+    }
+
+    100% {
+      transform: translateX(0rem)
+    }
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  }
+
+  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: all .5s ease-in-out;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
